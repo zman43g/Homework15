@@ -32,8 +32,30 @@ public class Book {
     public Author getAuthor() {
         return author;
     }
+
+    @Override
     public String toString() {
-        return "Название книги " + title +", автор "+ getAuthor().getAuthorName() +" "+ getAuthor().getAuthorSurname() +", год издания "+ publicationYear;
+        return "Название книги " + title + ", автор " + author.toString() + ", год издания " + publicationYear;
     }
+
+    @Override
+    public boolean equals(Object oth) {
+        if (this == oth) {
+            return true;
+        } else if (oth == null || getClass() != oth.getClass()) {
+            return false;
+        } else {
+            Book b1 = (Book) oth;
+            boolean checkBookTitle;
+            checkBookTitle = title.equals(b1.title) && author.getAuthorName().equals(b1.author.getAuthorName()) && author.getAuthorSurname().equals(b1.author.getAuthorSurname()) && publicationYear == b1.publicationYear;
+            return checkBookTitle;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(title, author, publicationYear);
+    }
+
 
 }
