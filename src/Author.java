@@ -30,10 +30,15 @@ public class Author {
 
     @Override
     public boolean equals(Object ot) {
-        if (ot == null || getClass() != ot.getClass()) return false;
-        Author author = (Author) ot;
-        boolean checkNameAndSurname = authorName.equals(authorName) && authorSurname.equals(author.authorSurname);
-        return checkNameAndSurname;
+        if (this == ot) {
+            return true;
+        } else if (ot == null || getClass() != ot.getClass()) {
+            return false;
+        } else {
+            Author author = (Author) ot;
+            boolean checkNameAndSurname = authorName.equals(author.authorName) && authorSurname.equals(author.authorSurname);
+            return checkNameAndSurname;
+        }
     }
 
     @Override

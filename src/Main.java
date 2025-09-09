@@ -17,7 +17,7 @@ public class Main {
         System.out.println(donKihot.hashCode());
         Author rich = new Author("Ричард","Руссо");
         System.out.println(richardRusso.equals(rich));
-        Book empireFalls2 = new Book("Эмпайр Фоллз", rich, 2020);
+        Book empireFalls2 = new Book("Эмпайр Фоллз", rich, 2018);
         System.out.println(empireFalls.equals(empireFalls2)); // в операторе сравнения книг год не сравнивается умышленно
 
 
